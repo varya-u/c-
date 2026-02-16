@@ -1,13 +1,17 @@
-using System;
-
-public static void DrawSquare(int sideLength, char symbol)
+public static bool IsPalindrome(int number)
 {
-    for (int i = 0; i < sideLength; i++)
+    // Преобразуем число в строку для удобства
+    string numStr = number.ToString();
+    int left = 0;
+    int right = numStr.Length - 1;
+    
+    while (left < right)
     {
-        for (int j = 0; j < sideLength; j++)
-        {
-            Console.Write(symbol);
-        }
-        Console.WriteLine();
+        if (numStr[left] != numStr[right])
+            return false;
+        left++;
+        right--;
     }
+    
+    return true;
 }
