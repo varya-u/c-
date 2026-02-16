@@ -1,17 +1,21 @@
-public static bool IsPalindrome(int number)
+using System;
+
+public class Program
 {
-    // Преобразуем число в строку для удобства
-    string numStr = number.ToString();
-    int left = 0;
-    int right = numStr.Length - 1;
-    
-    while (left < right)
+    public static void DrawSquare(int sideLength, char symbol)
     {
-        if (numStr[left] != numStr[right])
-            return false;
-        left++;
-        right--;
+        for (int i = 0; i < sideLength; i++)
+        {
+            for (int j = 0; j < sideLength; j++)
+            {
+                Console.Write(symbol);
+            }
+            Console.WriteLine();
+        }
     }
     
-    return true;
+    static void Main()
+    {
+        DrawSquare(5, '*');
+    }
 }
